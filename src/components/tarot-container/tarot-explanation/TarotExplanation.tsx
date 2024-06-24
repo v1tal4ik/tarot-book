@@ -38,7 +38,11 @@ const TarotExplanation = ({ isLoading, message, handleReset }: ITarotExplanation
 	return (
 		<div className='w-full flex flex-col justify-center items-start'>
 			<div className='w-full relative'>
-				<img src={PersonAvatar} alt='person-avatar' className='absolute left-[-40px] ' />
+				<img
+					src={PersonAvatar}
+					alt='person-avatar'
+					className='absolute left-[-40px] max-sm:left-0 max-sm:top-[-40px]'
+				/>
 				{isLoading ? (
 					<ExplanationSkeleton />
 				) : (
@@ -47,9 +51,9 @@ const TarotExplanation = ({ isLoading, message, handleReset }: ITarotExplanation
 					</p>
 				)}
 			</div>
-			<div className='w-full flex justify-between gap-14 mt-4'>
-				<button className='primary-button w-[70%]'>Get the decoding</button>
-				<div className=' w-[80%] flex justify-end items-start gap-2'>
+			<div className='w-full flex justify-between gap-14 mt-4 max-sm:flex-wrap-reverse max-sm:justify-center max-sm:gap-4'>
+				<button className='primary-button w-[70%] max-sm:w-full'>Get the decoding</button>
+				<div className=' w-[80%] flex justify-end items-start gap-2 max-sm:w-full max-sm:justify-start max-sm:gap-4 max-sm:items-center'>
 					<img src={Tips} alt='tips' />
 					<p className='text-[11px] text-violet-300'>
 						Use this tool as a clue; for the precise answer, consult our tarot reader providing more

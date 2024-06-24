@@ -12,18 +12,16 @@ export interface IMessageContent {
 	explanation: string;
 }
 
-export interface IChoices {
-	finish_reason: string;
-	index: number;
-	logprobs: string | null;
-	message: {
-		content: string;
-		role: 'assistant';
-	};
-}
-
 export interface IAssistantOpenAiResponse {
-	choices: Array<IChoices>;
+	choices: {
+		finish_reason: string;
+		index: number;
+		logprobs: string | null;
+		message: {
+			content: string;
+			role: 'assistant';
+		};
+	}[];
 	created: number;
 	id: string;
 	model: string;

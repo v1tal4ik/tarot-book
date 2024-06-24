@@ -5,6 +5,7 @@ interface ITextAreaProps<T extends FieldValues> {
 	register: UseFormRegister<T>;
 	watch: UseFormWatch<T>;
 	maxLength: number;
+	containerClassName: string;
 	className: string;
 	placeholder: string;
 	rows: number;
@@ -15,10 +16,11 @@ const TextArea = <T extends FieldValues>({
 	register,
 	watch,
 	maxLength,
+	containerClassName,
 	...props
 }: ITextAreaProps<T>) => {
 	return (
-		<div className='relative'>
+		<div className={containerClassName}>
 			<textarea {...register(name)} {...props} />
 			<p className='absolute bottom-4 right-2 text-violet-300 text-[11px]'>
 				{watch(name)?.length || 0}/{maxLength}

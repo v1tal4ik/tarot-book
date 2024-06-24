@@ -49,7 +49,7 @@ const TarotContainer = () => {
 	}, []);
 
 	return (
-		<main className='main-container mt-20 flex justify-center gap-[5%]'>
+		<main className='main-container'>
 			<SkeletonTheme baseColor='#F5F5F826' highlightColor='#51315D' height={25}>
 				{isSubmited ? (
 					<>

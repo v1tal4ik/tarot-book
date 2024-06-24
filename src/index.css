@@ -28,7 +28,36 @@ h2 {
 	transform: translate(-50%, -50%);
 
 	width: 100%;
-	padding: 0 40px;
+	padding: 20px 40px;
+	display: flex;
+	justify-content: center;
+	column-gap: 5%;
+}
+
+/* For mobile  */
+
+@media not all and (min-width: 640px) {
+	h2 {
+		font-size: 20px;
+		font-weight: 600;
+	}
+	.app-container {
+		padding: 0 20px;
+	}
+	.main-container {
+		position: static;
+		transform: none;
+
+		height: calc(100vh - 114px);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 0;
+		margin-top: 40px;
+	}
+	.form-group-radio::before {
+		padding: 2px 8px;
+	}
 }
 
 .common-circular-avatar {
@@ -45,6 +74,7 @@ h2 {
 
 .primary-button {
 	@apply text-lg font-medium bg-pink-700 py-2 px-4 rounded-2xl hover:bg-pink-800;
+	@apply max-sm:text-[12px] max-sm:py-1 max-sm:px-2 max-sm:rounded-lg;
 }
 
 .primary-button:disabled {
@@ -63,6 +93,7 @@ textarea {
 
 .form-group-label-radio {
 	@apply flex justify-between items-center py-2 px-4 text-xl my-2 bg-violet-500 rounded-full hover:cursor-pointer;
+	@apply max-sm:text-sm;
 }
 
 .form-group-radio {
@@ -73,11 +104,11 @@ textarea {
 }
 
 .form-group-radio::before {
-	content: url('./assets/icons/arrow-left.svg');
+	content: url('./assets/icons/arrow-right.svg');
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	padding: 0 10px;
+	/* padding: 0 10px; */
 	border-radius: 50%;
 	transform: translate(-50%, -50%);
 	background-color: #fc5f7e;
