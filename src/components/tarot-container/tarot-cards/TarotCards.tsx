@@ -6,7 +6,7 @@ const TarotCards = () => {
 			<h3 className='w-[75%] text-xl text-center font-semibold max-sm:text-base max-sm:w-full'>
 				Let’s check what awaits you in career and finances in the near future
 			</h3>
-			<img src={TarotCardsPath} alt='tarot-cards' />
+			<img src={TarotCardsPath} alt='tarot-cards' className='max-sm:w-[70%] max-sm:h-[70%]' />
 			<p className='text-center p-0 m-0 max-sm:hidden'>Take a deep breath</p>
 		</div>
 	);
