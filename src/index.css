@@ -7,69 +7,28 @@
 /* Common styles  */
 
 h2 {
-	font-size: 25px;
-	font-weight: 600;
+	@apply text-[25px] font-semibold;
+	@apply max-sm:text-xl;
+}
+.potition-centered {
+	@apply top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%];
 }
 
 .app-container {
-	width: 100vw;
-	height: 100vh;
-	min-height: 100vh;
-	position: fixed;
-	padding: 20px 40px;
-	overflow: auto;
-	@apply bg-violet-700 text-white font-poppins;
+	@apply w-[100vw] h-[100vm] min-h-[100vh] fixed py-[20px] px-[20px] bg-violet-700 text-white font-poppins;
+	@apply max-sm:px-5;
 }
 
 .main-container {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
-	width: 100%;
-	padding: 20px 40px;
-	display: flex;
-	justify-content: center;
-	column-gap: 5%;
-}
-
-/* For mobile  */
-
-@media not all and (min-width: 640px) {
-	h2 {
-		font-size: 20px;
-		font-weight: 600;
-	}
-	.app-container {
-		padding: 0 20px;
-	}
-	.main-container {
-		position: static;
-		transform: none;
-
-		height: calc(100vh - 114px);
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		padding: 0;
-		margin-top: 40px;
-	}
-	.form-group-radio::before {
-		padding: 2px 8px;
-	}
+	@apply fixed potition-centered w-full py-5 px-10 flex justify-center gap-x-[5%];
+	@apply static transform-none h-[calc(100vh_-_175px)] flex flex-col justify-between mt-10 p-0;
 }
 
 .common-circular-avatar {
-	display: inline-block;
-	position: relative;
-	overflow: hidden;
-	border-radius: 50%;
+	@apply inline-block relative overflow-hidden rounded-full;
 }
 .common-circular-avatar .circular--landscape img {
-	width: auto;
-	height: 100%;
-	margin-left: -50px;
+	@apply w-auto h-[100%] ml-[-50%];
 }
 
 .primary-button {
@@ -78,8 +37,7 @@ h2 {
 }
 
 .primary-button:disabled {
-	opacity: 0.7;
-	pointer-events: none;
+	@apply opacity-[0.7] pointer-events-none;
 }
 
 /* Reset styles  */
@@ -97,25 +55,15 @@ textarea {
 }
 
 .form-group-radio {
-	position: relative;
-	height: 20px;
-	width: 20px;
-	appearance: none;
+	@apply relative h-5 w-5 appearance-none;
 }
 
 .form-group-radio::before {
 	content: url('./assets/icons/arrow-right.svg');
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	/* padding: 0 10px; */
-	border-radius: 50%;
-	transform: translate(-50%, -50%);
-	background-color: #fc5f7e;
-	border: none;
+	@apply absolute potition-centered  px-[10px]  bg-pink-700  rounded-full border-none;
 }
 
 .form-group-radio:checked::before {
 	content: url('./assets/icons/arrow-down.svg');
-	padding: 0 9px;
+	@apply px-2;
 }
