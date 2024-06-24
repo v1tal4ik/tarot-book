@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { Avatar, Search } from '../shared';
-import { ADMIN_USER, MAIN_ROUTES } from '../../utils/constates';
+import { ADMIN_USER, MAIN_ROUTES } from 'src/utils/constates';
 
 const Header = () => {
 	return (

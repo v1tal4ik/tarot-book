@@ -19,7 +19,9 @@ const BreadCrumbs = () => {
 					)
 				)}
 			</nav>
-			<h1 className='block mt-2 text-[32px] font-bold'>{relativePathArr.at(-1)}</h1>
+			<h1 className='block mt-2 text-[32px] font-bold'>
+				{relativePathArr[relativePathArr.length - 1]}
+			</h1>
 		</div>
 	);
 };

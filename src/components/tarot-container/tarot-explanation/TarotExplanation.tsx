@@ -8,7 +8,7 @@ import PersonAvatar from 'src/assets/images/avatar-person.svg';
 import Tips from 'src/assets/icons/tip.svg';
 
 const ExplanationSkeleton = () => (
-	<>
+	<React.Fragment>
 		<div className='flex gap-2'>
 			<Skeleton containerClassName='w-[15%]' />
 			<Skeleton containerClassName='w-[10%]' />
@@ -27,10 +27,14 @@ const ExplanationSkeleton = () => (
 			<Skeleton containerClassName='w-[40%]' />
 			<Skeleton containerClassName='w-[30%]' />
 		</div>
-	</>
+	</React.Fragment>
 );
 
-const TarotExplanation = ({ isLoading, message }: IMessageState) => {
+interface ITarotExplanationProps extends IMessageState {
+	handleReset: () => void;
+}
+
+const TarotExplanation = ({ isLoading, message, handleReset }: ITarotExplanationProps) => {
 	return (
 		<div className='w-full flex flex-col justify-center items-start'>
 			<div className='w-full relative'>
@@ -53,6 +57,9 @@ const TarotExplanation = ({ isLoading, message }: IMessageState) => {
 					</p>
 				</div>
 			</div>
+			<button className='mt-2 text-[11px] text-violet-300 underline' onClick={handleReset}>
+				ask another question
+			</button>
 		</div>
 	);
 };

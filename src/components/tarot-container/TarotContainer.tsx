@@ -42,22 +42,19 @@ const TarotContainer = () => {
 		}
 	}, []);
 
-	const handleReset = () => {
+	const handleReset = useCallback(() => {
 		setMessage(null);
 		setQuestion('');
 		setSubmit(false);
-	};
+	}, []);
 
 	return (
 		<main className='main-container mt-20 flex justify-center gap-[5%]'>
-			<button className='absolute primary-button top-0 left-0' onClick={handleReset}>
-				reset
-			</button>
 			<SkeletonTheme baseColor='#F5F5F826' highlightColor='#51315D' height={25}>
 				{isSubmited ? (
 					<>
 						<TarotAnswer isLoading={isLoading} question={question} message={message} />
-						<TarotExplanation isLoading={isLoading} message={message} />
+						<TarotExplanation isLoading={isLoading} message={message} handleReset={handleReset} />
 					</>
 				) : (
 					<>

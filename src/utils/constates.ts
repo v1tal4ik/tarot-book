@@ -1,4 +1,5 @@
 import { IMessageContent } from 'src/interfaces';
+import ProfileAvatar from 'src/assets/images/avatar-admin.svg';
 
 export const MAIN_ROUTES = [
 	{ label: 'Advisors', path: '#' },
@@ -10,7 +11,7 @@ export const MAIN_ROUTES = [
 
 export const ADMIN_USER = {
 	name: 'Samanta Johnson',
-	img: '/src/assets/images/avatar-admin.svg',
+	img: ProfileAvatar,
 };
 
 export const PREDEFINED_QUESTIONS = [
