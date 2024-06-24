@@ -38,7 +38,7 @@ h2 {
 
 .main-container {
 	@apply fixed potition-centered w-full mt-10 py-5 px-10 flex justify-center gap-x-[5%];
-	@apply max-sm:static max-sm:transform-none max-sm:h-[calc(100vh_-_120px)] max-sm:flex max-sm:flex-col max-sm:justify-between max-sm:mt-10 max-sm:p-0;
+	@apply max-sm:static max-sm:transform-none max-sm:h-[calc(100vh_-_90px)] max-sm:flex max-sm:flex-col max-sm:justify-between max-sm:mt-2 max-sm:p-0;
 }
 
 .common-circular-avatar {
