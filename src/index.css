@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Common styles  */
+
+h2 {
+	font-size: 25px;
+	font-weight: 600;
+}
+
+.app-container {
+	width: 100vw;
+	height: 100vh;
+	min-height: 100vh;
+	position: fixed;
+	padding: 20px 40px;
+	overflow: auto;
+	@apply bg-violet-700 text-white font-poppins;
+}
+
+.main-container {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 100%;
+	padding: 0 40px;
+}
+
+.common-circular-avatar {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+}
+.common-circular-avatar .circular--landscape img {
+	width: auto;
+	height: 100%;
+	margin-left: -50px;
+}
+
+.primary-button {
+	@apply text-lg font-medium bg-pink-700 py-2 px-4 rounded-2xl hover:bg-pink-800;
+}
+
+.primary-button:disabled {
+	opacity: 0.7;
+	pointer-events: none;
+}
+
+/* Reset styles  */
+
+input,
+textarea {
+	@apply outline-none;
+}
+
+/* Styles for circular radio input  */
+
+.form-group-label-radio {
+	@apply flex justify-between items-center py-2 px-4 text-xl my-2 bg-violet-500 rounded-full hover:cursor-pointer;
+}
+
+.form-group-radio {
+	position: relative;
+	height: 20px;
+	width: 20px;
+	appearance: none;
+}
+
+.form-group-radio::before {
+	content: url('./assets/icons/arrow-left.svg');
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 0 10px;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fc5f7e;
+	border: none;
+}
+
+.form-group-radio:checked::before {
+	content: url('./assets/icons/arrow-down.svg');
+	padding: 0 9px;
+}
