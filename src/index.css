@@ -10,9 +10,26 @@ h2 {
 	@apply text-[25px] font-semibold;
 	@apply max-sm:text-xl;
 }
+
 .potition-centered {
 	@apply top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%];
 }
+
+.button-icons-wrapper {
+	@apply py-2 px-4 rounded-full;
+}
+
+.gradient {
+	background: rgb(78, 34, 93);
+	background: linear-gradient(
+		90deg,
+		rgba(78, 34, 93, 1) 0%,
+		rgba(100, 8, 100, 1) 50%,
+		rgba(69, 7, 94, 1) 100%
+	);
+}
+
+/* Common classes  */
 
 .app-container {
 	@apply w-[100vw] h-[100vm] min-h-[100vh] fixed py-[20px] px-[20px] bg-violet-700 text-white font-poppins;
@@ -20,8 +37,8 @@ h2 {
 }
 
 .main-container {
-	@apply fixed potition-centered w-full py-5 px-10 flex justify-center gap-x-[5%];
-	@apply static transform-none h-[calc(100vh_-_175px)] flex flex-col justify-between mt-10 p-0;
+	@apply fixed potition-centered w-full mt-10 py-5 px-10 flex justify-center gap-x-[5%];
+	@apply max-sm:static max-sm:transform-none max-sm:h-[calc(100vh_-_120px)] max-sm:flex max-sm:flex-col max-sm:justify-between max-sm:mt-10 max-sm:p-0;
 }
 
 .common-circular-avatar {
@@ -66,4 +83,8 @@ textarea {
 .form-group-radio:checked::before {
 	content: url('./assets/icons/arrow-down.svg');
 	@apply px-2;
+}
+
+.menu {
+	@apply fixed w-[70%] h-[100vh] top-0 right-0 z-10  py-10 text-black flex flex-col justify-between gradient transition ease-in-out delay-150;
 }
