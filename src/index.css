@@ -68,8 +68,17 @@ textarea {
 	@apply outline-none;
 }
 
+/* Syles for menu  */
+
 .menu {
 	@apply fixed w-[70%] h-[100vh] top-0 right-0 z-10  py-10 text-black flex flex-col justify-between gradient transition ease-in-out delay-150;
+}
+
+/* Styles for psychic modal  */
+
+.psychic-modal {
+	@apply fixed sm:top-[50%] position-centered  sm:w-[480px] bg-white py-4 px-5 rounded-md;
+	@apply max-sm:w-full max-sm:top-auto max-sm:bottom-0 max-sm:translate-y-0;
 }
 
 /* Styles for circular radio input PREDEFINED QUESTION  */
@@ -111,11 +120,4 @@ textarea {
 .psychic-item-form-group-radio:checked::before {
 	content: url('./assets/icons/check.svg');
 	@apply bg-pink-700 px-[8px] border-white;
-}
-
-/* Styles for psychic modal  */
-
-.psychic-modal {
-	@apply fixed sm:top-[50%] position-centered  sm:w-[480px] bg-white py-4 px-5 rounded-md;
-	@apply max-sm:w-full max-sm:top-auto max-sm:bottom-0 max-sm:translate-y-0;
 }

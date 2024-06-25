@@ -24,7 +24,7 @@ export interface IMessageState {
 const TarotContainer = () => {
 	const [isLoading, setLoading] = useState<boolean>(false);
 	const [isSubmited, setSubmit] = useState<boolean>(false);
-	const [question, setQuestion] = useState<string>('');
+	const [question, setQuestion] = useState<string | null>(null);
 	const [message, setMessage] = useState<IMessageContent | null>(null);
 
 	// Modal
@@ -54,7 +54,7 @@ const TarotContainer = () => {
 
 	const handleReset = useCallback(() => {
 		setMessage(null);
-		setQuestion('');
+		setQuestion(null);
 		setSubmit(false);
 	}, []);
 

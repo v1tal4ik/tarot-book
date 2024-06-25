@@ -7,7 +7,7 @@ import { ERROR_MESSAGE } from '../../../utils/constates';
 import TarotCard from 'src/assets/images/the-empress-card.svg';
 
 interface ITarotAnswerProps extends IMessageState {
-	question: string;
+	question: string | null;
 }
 
 const TarotAnswer = React.memo(({ isLoading, question, message }: ITarotAnswerProps) => {

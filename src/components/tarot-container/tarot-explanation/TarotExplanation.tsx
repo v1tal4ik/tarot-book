@@ -57,7 +57,7 @@ const TarotExplanation = React.memo(
 					<button
 						className='primary-button w-[70%] max-lg:w-full'
 						onClick={onOpenModal}
-						disabled={isLoading}>
+						disabled={!message?.answer}>
 						Get the decoding
 					</button>
 					<div className=' w-[80%] flex justify-end items-start gap-2 max-lg:w-full max-lg:justify-start max-lg:gap-4 max-lg:items-center'>

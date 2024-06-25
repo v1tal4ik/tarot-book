@@ -14,7 +14,7 @@ export const MAIN_ROUTES = [
 
 export const ADMIN_USER = {
 	name: 'Samanta Johnson',
-	img: ProfileAvatar,
+	imgURL: ProfileAvatar,
 };
 
 export const PREDEFINED_QUESTIONS = [

@@ -3,7 +3,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { IPredefinedQuestion, QuestionFormData } from 'src/interfaces';
 
 import TarotPredefinedQuestion from './tarot-predefined-question/TarotPredefinedQuestion';
-import { Input, TextArea } from 'src/components/shared';
+import { Input } from 'src/components/shared';
 
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -67,38 +67,21 @@ const TarotQuestions = React.memo(({ questions, handleSubmitFunc }: ITarotQuesti
 					</span>{' '}
 					for today's guidance:
 				</label>
-				{/* Desktop version  */}
-				<>
-					<TextArea
+
+				<div className='relative max-sm:py-4 max-sm:px-4 max-sm:rounded-t-[20px] max-sm:bg-violet-300'>
+					<Input
 						name='question'
 						register={register}
 						watch={watch}
 						maxLength={TEXTAREA_MAX_LENGTH}
-						containerClassName='relative max-sm:hidden'
-						className='w-full mt-4 p-4 bg-violet-600 rounded-lg resize-none max-sm:hidden'
-						placeholder='Type your textarea...'
-						rows={10}
-					/>
-					<button
-						className='primary-button mt-2 max-sm:hidden'
-						disabled={Object.values(touchedFields).length > 0 && (!isDirty || !isValid)}>
-						Get the answer
-					</button>
-				</>
-
-				{/* Mobile version  */}
-
-				<div className='sm:hidden relative w-full py-2 px-4 rounded-t-[20px] bg-violet-300'>
-					<Input
-						name='question'
-						register={register}
 						type='text'
-						containerClassName='relative sm:hidden'
-						className='w-full mt-4 p-4 bg-violet-600 text-[13px] rounded-lg'
-						placeholder='Type your input...'
+						containerClassName='relative'
+						symbolContainerClassName='absolute bottom-2 right-2 text-violet-300 text-[11px] max-sm:hidden'
+						className='w-full sm:mt-4 sm:p-10 bg-violet-600 rounded-lg max-sm:text-[13px] max-sm:py-4 max-sm:px-2'
+						placeholder='Type your question...'
 					/>
 					<button
-						className='primary-button mt-2 absolute top-6 right-6'
+						className='primary-button mt-2 max-sm:absolute max-sm:top-4 max-sm:right-6'
 						disabled={Object.values(touchedFields).length > 0 && (!isDirty || !isValid)}>
 						Get the answer
 					</button>

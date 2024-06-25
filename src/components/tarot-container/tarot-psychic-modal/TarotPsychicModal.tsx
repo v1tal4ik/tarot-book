@@ -1,10 +1,10 @@
-import { useCallback, useState } from 'react';
 import Modal from 'react-modal';
 
 import { PSYCHIC_ARR } from 'src/utils/constates';
 
 import TarotPsychic from './tarot-psychic/TarotPsychic';
 import CloseIcon from 'src/assets/icons/close-black.svg';
+import { useCallback, useState } from 'react';
 
 Modal.setAppElement('#root');
 
@@ -14,17 +14,22 @@ interface TarotPsychicModalProps {
 }
 
 const TarotPsychicModal = ({ isOpen, closeModal }: TarotPsychicModalProps) => {
-	const [currentPsychicId, setCurrentPsychicId] = useState<string>('');
+	const [currentPsychicId, setCurrentPsychicId] = useState<string | null>(null);
 
 	const handleChangePsychicId = useCallback(({ target }: React.ChangeEvent<HTMLInputElement>) => {
 		setCurrentPsychicId(target.value);
+	}, []);
+
+	const handleResetPsychicId = useCallback(() => {
+		setCurrentPsychicId(null);
 	}, []);
 
 	return (
 		<Modal
 			isOpen={isOpen}
 			className='psychic-modal'
-			overlayClassName='fixed inset-0 bg-[#000000bf]'>
+			overlayClassName='fixed inset-0 bg-[#000000bf]'
+			onAfterClose={handleResetPsychicId}>
 			<div className='flex flex-col gap-4 '>
 				<div className='flex justify-between items-center'>
 					<h2>Choose the psychic to answer:</h2>

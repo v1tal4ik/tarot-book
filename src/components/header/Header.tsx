@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Avatar, Search } from '../shared';
@@ -6,6 +6,18 @@ import { ADMIN_USER, MAIN_ROUTES } from 'src/utils/constates';
 
 import MenuIcon from 'src/assets/icons/menu.svg';
 import CloseIcon from 'src/assets/icons/close.svg';
+
+interface IProfileLinkProps {
+	name: string;
+	imgURL: string;
+}
+
+const ProfileLink = React.memo(({ name, imgURL }: IProfileLinkProps) => (
+	<Link to='#' className='flex justify-center items-center gap-4'>
+		<p className='text-lg font-medium text-white'>{name}</p>
+		<Avatar width={50} height={50} path={imgURL} />
+	</Link>
+));
 
 const Header = () => {
 	const [isVisible, setVisible] = useState<boolean>(false);
@@ -29,10 +41,7 @@ const Header = () => {
 					))}
 					<Search />
 				</nav>
-				<div className='flex justify-end items-center gap-4'>
-					<p className='text-lg font-medium text-right'>{ADMIN_USER.name}</p>
-					<Avatar width={50} height={50} path={ADMIN_USER.img} />
-				</div>
+				<ProfileLink {...ADMIN_USER} />
 			</header>
 
 			{/* Mobile version  */}
@@ -47,20 +56,17 @@ const Header = () => {
 			</header>
 			{isVisible && (
 				<menu className='menu'>
-					<button className='flex justify-end mr-10' onClick={toggleVisible}>
+					<button className='flex justify-end mr-[2%]' onClick={toggleVisible}>
 						<img src={CloseIcon} alt='close-icon' className='button-icons-wrapper bg-white block' />
 					</button>
-					<nav className='flex flex-col justify-between items-center gap-y-20 '>
+					<nav className='flex flex-col justify-between items-center gap-y-[5vh]'>
 						{MAIN_ROUTES.map(({ label, path }) => (
 							<Link key={label} to={path} className='block text-white text-lg font-semibold'>
 								{label}
 							</Link>
 						))}
 					</nav>
-					<Link to='#' className='flex justify-center items-center gap-4'>
-						<Avatar width={50} height={50} path={ADMIN_USER.img} />
-						<p className='text-lg font-medium text-white'>{ADMIN_USER.name}</p>
-					</Link>
+					<ProfileLink {...ADMIN_USER} />
 				</menu>
 			)}
 		</>
