@@ -1,10 +1,10 @@
+import { useCallback, useState } from 'react';
 import Modal from 'react-modal';
 
 import { PSYCHIC_ARR } from 'src/utils/constates';
 
 import TarotPsychic from './tarot-psychic/TarotPsychic';
 import CloseIcon from 'src/assets/icons/close-black.svg';
-import { useCallback, useState } from 'react';
 
 Modal.setAppElement('#root');
 

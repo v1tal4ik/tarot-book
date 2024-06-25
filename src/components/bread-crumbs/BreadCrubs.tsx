@@ -7,7 +7,7 @@ const relativePathArr = ['Main', 'Tarot', 'Yes or No answer'];
 const BreadCrumbs = () => {
 	return (
 		<div className='fixed top-28 max-sm:static max-sm:mt-2'>
-			{/* Desktop varsion  */}
+			{/* Desktop version  */}
 			<nav className='flex justify-start items-center gap-2 max-sm:hidden '>
 				{relativePathArr.map((path, index, arr) =>
 					index === arr.length - 1 ? (
