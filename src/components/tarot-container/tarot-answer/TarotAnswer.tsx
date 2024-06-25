@@ -12,7 +12,7 @@ interface ITarotAnswerProps extends IMessageState {
 
 const TarotAnswer = React.memo(({ isLoading, question, message }: ITarotAnswerProps) => {
 	return (
-		<div className='w-full flex flex-col justify-start items-center'>
+		<div className='w-full flex flex-col justify-start items-center max-sm:h-[30%]'>
 			<div className='text-center'>
 				<h2>Your question:</h2>
 				<p>{question}</p>
@@ -24,7 +24,7 @@ const TarotAnswer = React.memo(({ isLoading, question, message }: ITarotAnswerPr
 					</p>
 				)}
 			</div>
-			<img src={TarotCard} alt='tarot-empress-card' className='mt-4' />
+			<img src={TarotCard} alt='tarot-empress-card' className='mt-4 h-[100%] max-sm:mt-2 ' />
 		</div>
 	);
 });
