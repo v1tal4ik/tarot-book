@@ -29,3 +29,10 @@ export interface IAssistantOpenAiResponse {
 	system_fingerprint: string;
 	usage: Record<string, number>;
 }
+
+export interface IPsychic {
+	id: string;
+	imageUrl: string;
+	name: string;
+	price: number;
+}

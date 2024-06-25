@@ -11,7 +11,7 @@ h2 {
 	@apply max-sm:text-xl;
 }
 
-.potition-centered {
+.position-centered {
 	@apply top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%];
 }
 
@@ -37,7 +37,7 @@ h2 {
 }
 
 .main-container {
-	@apply fixed potition-centered w-full mt-10 py-5 px-10 flex justify-center gap-x-[5%];
+	@apply fixed position-centered w-full mt-10 py-5 px-10 flex justify-center gap-x-[5%];
 	@apply max-sm:static max-sm:transform-none max-sm:h-[calc(100vh_-_90px)] max-sm:flex max-sm:flex-col max-sm:justify-between max-sm:mt-2 max-sm:p-0;
 }
 
@@ -49,12 +49,16 @@ h2 {
 }
 
 .primary-button {
-	@apply text-lg font-medium bg-pink-700 py-2 px-4 rounded-2xl hover:bg-pink-800;
+	@apply text-lg font-medium bg-pink-700 text-white font-poppins py-2 px-4 rounded-2xl hover:bg-pink-800;
 	@apply max-sm:text-[12px] max-sm:py-1 max-sm:px-2 max-sm:rounded-lg;
 }
 
 .primary-button:disabled {
 	@apply opacity-[0.7] pointer-events-none;
+}
+
+.secondary-button {
+	@apply font-medium bg-violet-100 text-black font-poppins py-2 px-4 rounded-2xl hover:bg-violet-200;
 }
 
 /* Reset styles  */
@@ -64,27 +68,54 @@ textarea {
 	@apply outline-none;
 }
 
-/* Styles for circular radio input  */
+.menu {
+	@apply fixed w-[70%] h-[100vh] top-0 right-0 z-10  py-10 text-black flex flex-col justify-between gradient transition ease-in-out delay-150;
+}
 
-.form-group-label-radio {
+/* Styles for circular radio input PREDEFINED QUESTION  */
+
+.pre-question-form-group-label-radio {
 	@apply flex justify-between items-center py-2 px-4 text-xl my-2 bg-violet-500 rounded-full hover:cursor-pointer;
 	@apply max-sm:text-sm;
 }
 
-.form-group-radio {
+.pre-question-form-group-radio {
 	@apply relative h-5 w-5 appearance-none;
 }
 
-.form-group-radio::before {
+.pre-question-form-group-radio::before {
 	content: url('./assets/icons/arrow-right.svg');
-	@apply absolute potition-centered  px-[10px]  bg-pink-700  rounded-full border-none;
+	@apply absolute position-centered  px-[10px]  bg-pink-700  rounded-full border-none;
 }
 
-.form-group-radio:checked::before {
+.pre-question-form-group-radio:checked::before {
 	content: url('./assets/icons/arrow-down.svg');
 	@apply px-2;
 }
 
-.menu {
-	@apply fixed w-[70%] h-[100vh] top-0 right-0 z-10  py-10 text-black flex flex-col justify-between gradient transition ease-in-out delay-150;
+/* Styles for circular radio input PSYCHIC ITEM  */
+
+.psychic-item-form-group-radio-label {
+	@apply relative text-center hover:cursor-pointer;
+}
+
+.psychic-item-form-group-radio {
+	@apply absolute bottom-12 right-0 h-5 w-5 appearance-none;
+}
+
+.psychic-item-form-group-radio::before {
+	content: '\00a0';
+	@apply absolute position-centered bg-pink-100 px-[10px] border-2 border-violet-300 rounded-full text-center;
+}
+
+.psychic-item-form-group-radio:checked::before {
+	content: url('./assets/icons/check.svg');
+	@apply bg-pink-700 px-[8px] border-white;
+}
+
+/* Styles for psychic modal  */
+
+.psychic-modal {
+	@apply fixed sm:top-[50%] position-centered  sm:w-[480px] bg-white py-4 px-5 rounded-md;
+	@apply max-sm:w-full max-sm:top-auto max-sm:bottom-0 max-sm:translate-y-0;
 }

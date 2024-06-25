@@ -14,6 +14,7 @@ export default {
 				'violet-300': '#D3BDD9',
 				'pink-700': '#FC5F7E',
 				'pink-500': '#D3BDD9',
+				'pink-100': '#F0E7F3',
 				'yellow-700': '#FFCA64',
 			},
 		},

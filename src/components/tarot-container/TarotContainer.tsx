@@ -6,6 +6,8 @@ import { fetchTarotAnswer } from 'src/api/chat';
 import { ERROR_MESSAGE, PREDEFINED_QUESTIONS } from 'src/utils/constates';
 import { IMessageContent, QuestionFormData } from 'src/interfaces';
 
+import TarotPsychicModal from './tarot-psychic-modal/TarotPsychicModal';
+
 import TarotCards from './tarot-cards/TarotCards';
 import TarotAnswer from './tarot-answer/TarotAnswer';
 
@@ -24,6 +26,14 @@ const TarotContainer = () => {
 	const [isSubmited, setSubmit] = useState<boolean>(false);
 	const [question, setQuestion] = useState<string>('');
 	const [message, setMessage] = useState<IMessageContent | null>(null);
+
+	// Modal
+	const [isOpenModal, setOpenModal] = useState<boolean>(false);
+
+	const handleOpenModal = useCallback(() => setOpenModal(true), []);
+	const handleCloseModal = useCallback(() => setOpenModal(false), []);
+
+	// API
 
 	const handleFetchAnswer = useCallback(async (data: QuestionFormData) => {
 		try {
@@ -49,12 +59,18 @@ const TarotContainer = () => {
 	}, []);
 
 	return (
-		<main className='main-container'>
-			<SkeletonTheme baseColor='#F5F5F826' highlightColor='#51315D' height={25}>
+		<SkeletonTheme baseColor='#F5F5F826' highlightColor='#51315D' height={25}>
+			<TarotPsychicModal isOpen={isOpenModal} closeModal={handleCloseModal} />
+			<main className='main-container'>
 				{isSubmited ? (
 					<>
 						<TarotAnswer isLoading={isLoading} question={question} message={message} />
-						<TarotExplanation isLoading={isLoading} message={message} handleReset={handleReset} />
+						<TarotExplanation
+							isLoading={isLoading}
+							message={message}
+							onOpenModal={handleOpenModal}
+							handleReset={handleReset}
+						/>
 					</>
 				) : (
 					<>
@@ -62,8 +78,8 @@ const TarotContainer = () => {
 						<TarotQuestions questions={PREDEFINED_QUESTIONS} handleSubmitFunc={handleFetchAnswer} />
 					</>
 				)}
-			</SkeletonTheme>
-		</main>
+			</main>
+		</SkeletonTheme>
 	);
 };
 

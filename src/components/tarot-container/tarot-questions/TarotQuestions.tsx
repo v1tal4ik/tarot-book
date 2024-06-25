@@ -59,7 +59,7 @@ const TarotQuestions = React.memo(({ questions, handleSubmitFunc }: ITarotQuesti
 				/>
 			))}
 			<form className='mt-4' onSubmit={handleSubmit(onSubmit)}>
-				<h2 className='mt-8 text-[25px] font-semibold max-sm:hidden'>or ask the Cards</h2>
+				<h2 className='mt-8 font-semibold max-sm:hidden'>or ask the Cards</h2>
 				<label className='text-base max-sm:hidden'>
 					Submit your{' '}
 					<span className='inline-block bg-yellow-700 py-1 px-3 text-black font-semibold rounded rotate-[-5deg]'>

@@ -8,12 +8,12 @@ interface IPredefinedQuestionProps extends IPredefinedQuestion {
 
 const TarotPredefinedQuestion = React.memo(
 	({ text, currentValue, handleChange }: IPredefinedQuestionProps) => (
-		<label className='form-group-label-radio hover:bg-violet-600'>
+		<label className='pre-question-form-group-label-radio hover:bg-violet-600'>
 			{text}
 			<input
 				type='radio'
 				name='question'
-				className='form-group-radio'
+				className='pre-question-form-group-radio'
 				value={text}
 				checked={currentValue === text}
 				onChange={handleChange}
